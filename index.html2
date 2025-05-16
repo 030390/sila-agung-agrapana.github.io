@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Sila Agung Agrapana</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #1e1e1e;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 60px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #be9b5b;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .section {
+      padding: 4rem 2rem;
+      background-color: white;
+    }
+    .section:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+    .section h2 {
+      color: #be9b5b;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #1e1e1e;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .contact-info a {
+      color: #be9b5b;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/mnt/data/54231a9e-88cf-4bdc-abed-c4e04fdc3ef6.png" alt="Logo SAA" />
+    <nav>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>PT. Sila Agung Agrapana</h1>
+    <p>Mewujudkan ruang yang bernilai tinggi, fungsional, dan estetis</p>
+  </section>
+
+  <section class="section" id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>
+      PT. Sila Agung Agrapana adalah perusahaan yang bergerak dalam bidang jasa konstruksi, design & build, desain arsitektur, interior, hingga pengurusan perizinan dan renovasi. Berbasis di Jakarta Timur, kami berkomitmen menghadirkan layanan profesional dan hasil berkualitas tinggi untuk setiap proyek.
+    </p>
+  </section>
+
+  <section class="section" id="layanan">
+    <h2>Layanan Kami</h2>
+    <ul>
+      <li>Pembangunan rumah tinggal, gedung, ruko, dan tempat wisata</li>
+      <li>Jasa design & build terintegrasi</li>
+      <li>Desain arsitektur & gambar kerja lengkap</li>
+      <li>Desain interior hunian, kantor, cafe, dll</li>
+      <li>Renovasi dan penataan ulang</li>
+      <li>Pengurusan perizinan bangunan</li>
+    </ul>
+  </section>
+
+  <section class="section" id="portofolio">
+    <h2>Portofolio Proyek</h2>
+
+    <h3>Rumah Tinggal</h3>
+    <ul>
+      <li>Rumah Bp. Reynaldo</li>
+      <li>Rumah Ibu Irawaty Melisa</li>
+      <li>Rumah Dr. Yudi Fadillah</li>
+      <li>Rumah Bp. H. Toni</li>
+      <li>Rumah Bp. Ari Lumaksono</li>
+      <li>Rumah Ibu Azza</li>
+      <li>Rumah Bp. H. Azzam</li>
+    </ul>
+
+    <h3>Bangunan Komersial & Ibadah</h3>
+    <ul>
+      <li>Masjid Nurul Mustofa</li>
+      <li>Ruko Mutiara Karawaci</li>
+      <li>Ruko Dasana Xenter Bonang</li>
+      <li>Ruko La Vresco Mutiara Gading</li>
+      <li>Ruko Plaza Pasadena Villa Tomang</li>
+      <li>Ruko Dramaga</li>
+    </ul>
+
+    <h3>Tempat Wisata & Fasilitas Umum</h3>
+    <ul>
+      <li>Water Boom Dasana Xenter Bonang</li>
+      <li>Marketing Gallery Mutiara Gading</li>
+    </ul>
+
+    <h3>Perumahan</h3>
+    <ul>
+      <li>Perumahan Mutiara Gading</li>
+      <li>Perumahan Dukuh Bima</li>
+      <li>Perumahan Pluit Samudra</li>
+    </ul>
+
+    <div class="gallery">
+      <img src="https://source.unsplash.com/400x300/?modern-house" alt="Proyek 1">
+      <img src="https://source.unsplash.com/400x300/?architecture" alt="Proyek 2">
+      <img src="https://source.unsplash.com/400x300/?interior" alt="Proyek 3">
+      <img src="https://source.unsplash.com/400x300/?construction" alt="Proyek 4">
+    </div>
+  </section>
+
+  <section class="section" id="kontak">
+    <h2>Kontak Kami</h2>
+    <p class="contact-info">
+      Alamat: Jl. Rawa Lindung Mabes No. 108, Cilangkap, Cipayung, Jakarta Timur<br />
+      WhatsApp: <a href="https://wa.me/6285649838098">0856-4983-8098</a><br />
+      Instagram: <a href="https://www.instagram.com/tama_design_arsitek">@tama_design_arsitek</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 PT. Sila Agung Agrapana. All rights reserved.
+  </footer>
+</body>
+</html>
