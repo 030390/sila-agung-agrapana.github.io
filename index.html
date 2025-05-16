@@ -40,14 +40,22 @@
       color: #be9b5b;
     }
     .hero {
+      position: relative;
       background: url('https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 6rem 2rem;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     .section {
       padding: 4rem 2rem;
@@ -155,10 +163,10 @@
     </ul>
 
     <div class="gallery">
-      <img src="https://source.unsplash.com/400x300/?modern-house" alt="Proyek 1">
-      <img src="https://source.unsplash.com/400x300/?architecture" alt="Proyek 2">
-      <img src="https://source.unsplash.com/400x300/?interior" alt="Proyek 3">
-      <img src="https://source.unsplash.com/400x300/?construction" alt="Proyek 4">
+      <img src="/mnt/data/63e0263b-4b11-4e69-8f5e-1da28cf621ba.jpg" alt="Proyek 1">
+      <img src="/mnt/data/297aa507-74ed-4459-8248-2855e24036c8.jpg" alt="Proyek 2">
+      <img src="/mnt/data/3f5cbdkynu6nftg5uslf96.png" alt="Proyek 3">
+      <img src="/mnt/data/gv8zr8tfukhqqgxhsfay6t.png" alt="Proyek 4">
     </div>
   </section>
 
@@ -176,4 +184,3 @@
   </footer>
 </body>
 </html>
-
