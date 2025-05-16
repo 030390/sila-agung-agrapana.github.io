@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PT. Sila Agung Agrapana</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -18,9 +21,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
     header img {
       height: 60px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
     }
     nav a {
       margin-left: 1.5rem;
@@ -28,8 +36,11 @@
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover {
+      color: #be9b5b;
+    }
     .hero {
-      background: url('https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?auto=format&fit=crop&w=1350&q=80') center/cover;
+      background: url('https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 6rem 2rem;
@@ -48,6 +59,17 @@
     .section h2 {
       color: #be9b5b;
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
     footer {
       background-color: #1e1e1e;
       color: white;
@@ -62,7 +84,7 @@
 </head>
 <body>
   <header>
-    <img src="/mnt/data/50eee120-2034-450c-83c8-6dfcfa6cd60c.png" alt="Logo SAA" />
+    <img src="/mnt/data/54231a9e-88cf-4bdc-abed-c4e04fdc3ef6.png" alt="Logo SAA" />
     <nav>
       <a href="#tentang">Tentang Kami</a>
       <a href="#layanan">Layanan</a>
@@ -131,6 +153,13 @@
       <li>Perumahan Dukuh Bima</li>
       <li>Perumahan Pluit Samudra</li>
     </ul>
+
+    <div class="gallery">
+      <img src="https://source.unsplash.com/400x300/?modern-house" alt="Proyek 1">
+      <img src="https://source.unsplash.com/400x300/?architecture" alt="Proyek 2">
+      <img src="https://source.unsplash.com/400x300/?interior" alt="Proyek 3">
+      <img src="https://source.unsplash.com/400x300/?construction" alt="Proyek 4">
+    </div>
   </section>
 
   <section class="section" id="kontak">
@@ -145,253 +174,5 @@
   <footer>
     &copy; 2025 PT. Sila Agung Agrapana. All rights reserved.
   </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PT. Sila Agung Agrapana</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background-color: #1e1e1e;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header img {
-      height: 60px;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?auto=format&fit=crop&w=1350&q=80') center/cover;
-      color: white;
-      text-align: center;
-      padding: 6rem 2rem;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .section {
-      padding: 4rem 2rem;
-      background-color: white;
-    }
-    .section:nth-child(even) {
-      background-color: #f0f0f0;
-    }
-    .section h2 {
-      color: #be9b5b;
-    }
-    footer {
-      background-color: #1e1e1e;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    .contact-info a {
-      color: #be9b5b;
-      text-decoration: none;
-    }
-
-    /* Gallery Styles */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .gallery-item {
-      background-color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-    }
-    .gallery-item:hover {
-      transform: scale(1.03);
-    }
-    .gallery-item img {
-      width: 100%;
-      display: block;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-    }
-    .gallery-item .desc {
-      padding: 0.5rem 1rem 1rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* Lightbox Styles */
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      z-index: 1000;
-    }
-    .lightbox.active {
-      visibility: visible;
-      opacity: 1;
-    }
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    }
-    .lightbox .close {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      user-select: none;
-    }
-
-  </style>
-</head>
-<body>
-  <header>
-    <img src="50eee120-2034-450c-83c8-6dfcfa6cd60c.png" alt="Logo SAA" />
-    <nav>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#portofolio">Portofolio</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>PT. Sila Agung Agrapana</h1>
-    <p>Mewujudkan ruang yang bernilai tinggi, fungsional, dan estetis</p>
-  </section>
-
-  <section class="section" id="tentang">
-    <h2>Tentang Kami</h2>
-    <p>
-      PT. Sila Agung Agrapana adalah perusahaan yang bergerak dalam bidang jasa konstruksi, design & build, desain arsitektur, interior, hingga pengurusan perizinan dan renovasi. Berbasis di Jakarta Timur, kami berkomitmen menghadirkan layanan profesional dan hasil berkualitas tinggi untuk setiap proyek.
-    </p>
-  </section>
-
-  <section class="section" id="layanan">
-    <h2>Layanan Kami</h2>
-    <ul>
-      <li>Pembangunan rumah tinggal, gedung, ruko, dan tempat wisata</li>
-      <li>Jasa design & build terintegrasi</li>
-      <li>Desain arsitektur & gambar kerja lengkap</li>
-      <li>Desain interior hunian, kantor, cafe, dll</li>
-      <li>Renovasi dan penataan ulang</li>
-      <li>Pengurusan perizinan bangunan</li>
-    </ul>
-  </section>
-
-  <section class="section" id="portofolio">
-    <h2>Portofolio Proyek</h2>
-    <div class="gallery">
-
-      <div class="gallery-item" tabindex="0" data-desc="Rumah Bp. Reynaldo - Rumah Tinggal modern minimalis 2 lantai">
-        <img src="ppt_images/slide2_image1.jpeg" alt="Rumah Bp. Reynaldo" />
-        <div class="desc">Rumah Bp. Reynaldo</div>
-      </div>
-
-      <div class="gallery-item" tabindex="0" data-desc="Masjid Nurul Mustofa - Masjid dengan desain arsitektur islami modern">
-        <img src="ppt_images/slide6_image2.jpeg" alt="Masjid Nurul Mustofa" />
-        <div class="desc">Masjid Nurul Mustofa</div>
-      </div>
-
-      <div class="gallery-item" tabindex="0" data-desc="Ruko Mutiara Karawaci - Ruko 3 lantai dengan desain kontemporer">
-        <img src="ppt_images/slide6_image1.jpeg" alt="Ruko Mutiara Karawaci" />
-        <div class="desc">Ruko Mutiara Karawaci</div>
-      </div>
-
-      <div class="gallery-item" tabindex="0" data-desc="Water Boom Dasana Xenter Bonang - Fasilitas wisata air modern dan menyenangkan">
-        <img src="ppt_images/slide8_image1.jpeg" alt="Water Boom Dasana Xenter Bonang" />
-        <div class="desc">Water Boom Dasana Xenter Bonang</div>
-      </div>
-
-      <div class="gallery-item" tabindex="0" data-desc="Perumahan Mutiara Gading - Perumahan modern dengan fasilitas lengkap">
-        <img src="ppt_images/slide9_image1.jpeg" alt="Perumahan Mutiara Gading" />
-        <div class="desc">Perumahan Mutiara Gading</div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section" id="kontak">
-    <h2>Kontak Kami</h2>
-    <p class="contact-info">
-      Alamat: Jl. Rawa Lindung Mabes No. 108, Cilangkap, Cipayung, Jakarta Timur<br />
-      WhatsApp: <a href="https://wa.me/6285649838098">0856-4983-8098</a><br />
-      Instagram: <a href="https://www.instagram.com/tama_design_arsitek">tama_design_arsitek</a>
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 PT. Sila Agung Agrapana. All rights reserved.
-  </footer>
-
-  <div class="lightbox" id="lightbox">
-    <span class="close" id="closeBtn">&times;</span>
-    <img id="lightboxImg" src="" alt="" />
-  </div>
-
-  <script>
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('closeBtn');
-
-    galleryItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('active');
-      });
-
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          item.click();
-        }
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-      lightboxImg.alt = '';
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeBtn.click();
-      }
-    });
-  </script>
 </body>
 </html>
