@@ -2,185 +2,275 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PT. Sila Agung Agrapana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tama Design Arsitek</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --primary: #d4af37;
+      --dark: #111;
+      --light: #f8f8f8;
+    }
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      font-family: 'Open Sans', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
     header {
-      background-color: #1e1e1e;
-      color: white;
-      padding: 1rem 2rem;
+      position: relative;
+      height: 100vh;
+      background: url('https://source.unsplash.com/1600x900/?modern,architecture,home') center/cover no-repeat;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    header img {
-      height: 60px;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #be9b5b;
-    }
-    .hero {
-      position: relative;
-      background: url('https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-      color: white;
+      justify-content: center;
       text-align: center;
-      padding: 6rem 2rem;
+      color: white;
     }
-    .hero::before {
+    header::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-    .hero h1, .hero p {
-      position: relative;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
       z-index: 1;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
-    .section {
-      padding: 4rem 2rem;
-      background-color: white;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
     }
-    .section:nth-child(even) {
-      background-color: #f0f0f0;
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
     }
-    .section h2 {
-      color: #be9b5b;
+    .hero-content p {
+      font-size: 1.3rem;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 1000;
     }
-    .gallery img {
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--dark);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      color: var(--dark);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: var(--primary);
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      display: block;
+      margin: 20px auto 0;
+    }
+    .features, .portfolio, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .box {
+      flex: 1 1 300px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+    .box img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    .portfolio .box img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 10px;
+    }
+    .box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .testimonial {
+      font-style: italic;
+      font-size: 1rem;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      font-style: normal;
+      color: var(--primary);
     }
     footer {
-      background-color: #1e1e1e;
+      background: #111;
       color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 50px 20px;
     }
-    .contact-info a {
-      color: #be9b5b;
-      text-decoration: none;
+    footer p {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      nav ul {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+
+  <nav>
+    <div class="logo">Tama Design</div>
+    <ul>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#portfolio">Portofolio</a></li>
+      <li><a href="#testimoni">Testimoni</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <img src="/mnt/data/54231a9e-88cf-4bdc-abed-c4e04fdc3ef6.png" alt="Logo SAA" />
-    <nav>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#portofolio">Portofolio</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
+    <div class="hero-content">
+      <h1>Tama Design Arsitek</h1>
+      <p>Menghadirkan Ruang Berkualitas & Elegan</p>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>PT. Sila Agung Agrapana</h1>
-    <p>Mewujudkan ruang yang bernilai tinggi, fungsional, dan estetis</p>
-  </section>
-
-  <section class="section" id="tentang">
-    <h2>Tentang Kami</h2>
-    <p>
-      PT. Sila Agung Agrapana adalah perusahaan yang bergerak dalam bidang jasa konstruksi, design & build, desain arsitektur, interior, hingga pengurusan perizinan dan renovasi. Berbasis di Jakarta Timur, kami berkomitmen menghadirkan layanan profesional dan hasil berkualitas tinggi untuk setiap proyek.
+  <section id="tentang">
+    <h2 class="section-title">Tentang Kami</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      Tama Design Arsitek adalah studio arsitektur profesional berbasis di Jakarta yang menghadirkan karya-karya bernuansa modern, minimalis, dan islami. Kami melayani desain arsitektur, interior, hingga gambar kerja secara menyeluruh.
     </p>
   </section>
 
-  <section class="section" id="layanan">
-    <h2>Layanan Kami</h2>
-    <ul>
-      <li>Pembangunan rumah tinggal, gedung, ruko, dan tempat wisata</li>
-      <li>Jasa design & build terintegrasi</li>
-      <li>Desain arsitektur & gambar kerja lengkap</li>
-      <li>Desain interior hunian, kantor, cafe, dll</li>
-      <li>Renovasi dan penataan ulang</li>
-      <li>Pengurusan perizinan bangunan</li>
-    </ul>
-  </section>
-
-  <section class="section" id="portofolio">
-    <h2>Portofolio Proyek</h2>
-
-    <h3>Rumah Tinggal</h3>
-    <ul>
-      <li>Rumah Bp. Reynaldo</li>
-      <li>Rumah Ibu Irawaty Melisa</li>
-      <li>Rumah Dr. Yudi Fadillah</li>
-      <li>Rumah Bp. H. Toni</li>
-      <li>Rumah Bp. Ari Lumaksono</li>
-      <li>Rumah Ibu Azza</li>
-      <li>Rumah Bp. H. Azzam</li>
-    </ul>
-
-    <h3>Bangunan Komersial & Ibadah</h3>
-    <ul>
-      <li>Masjid Nurul Mustofa</li>
-      <li>Ruko Mutiara Karawaci</li>
-      <li>Ruko Dasana Xenter Bonang</li>
-      <li>Ruko La Vresco Mutiara Gading</li>
-      <li>Ruko Plaza Pasadena Villa Tomang</li>
-      <li>Ruko Dramaga</li>
-    </ul>
-
-    <h3>Tempat Wisata & Fasilitas Umum</h3>
-    <ul>
-      <li>Water Boom Dasana Xenter Bonang</li>
-      <li>Marketing Gallery Mutiara Gading</li>
-    </ul>
-
-    <h3>Perumahan</h3>
-    <ul>
-      <li>Perumahan Mutiara Gading</li>
-      <li>Perumahan Dukuh Bima</li>
-      <li>Perumahan Pluit Samudra</li>
-    </ul>
-
-    <div class="gallery">
-      <img src="/mnt/data/63e0263b-4b11-4e69-8f5e-1da28cf621ba.jpg" alt="Proyek 1">
-      <img src="/mnt/data/297aa507-74ed-4459-8248-2855e24036c8.jpg" alt="Proyek 2">
-      <img src="/mnt/data/3f5cbdkynu6nftg5uslf96.png" alt="Proyek 3">
-      <img src="/mnt/data/gv8zr8tfukhqqgxhsfay6t.png" alt="Proyek 4">
+  <section id="layanan">
+    <h2 class="section-title">Layanan Kami</h2>
+    <div class="features">
+      <div class="box">
+        <img src="https://img.icons8.com/ios-filled/100/blueprint.png" alt="Desain Arsitektur"/>
+        <h3>Desain Arsitektur</h3>
+        <p>Desain hunian, villa, dan bangunan komersial dengan pendekatan personal & estetik.</p>
+      </div>
+      <div class="box">
+        <img src="https://img.icons8.com/ios-filled/100/interior.png" alt="Interior Design"/>
+        <h3>Interior Design</h3>
+        <p>Menata ruang hidup agar fungsional, nyaman, dan selaras dengan karakter penghuninya.</p>
+      </div>
+      <div class="box">
+        <img src="https://img.icons8.com/ios-filled/100/engineering.png" alt="Gambar Kerja"/>
+        <h3>Gambar Kerja</h3>
+        <p>Dokumen teknis lengkap untuk pelaksanaan proyek yang efisien dan tepat sasaran.</p>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="kontak">
-    <h2>Kontak Kami</h2>
-    <p class="contact-info">
-      Alamat: Jl. Rawa Lindung Mabes No. 108, Cilangkap, Cipayung, Jakarta Timur<br />
-      WhatsApp: <a href="https://wa.me/6285649838098">0856-4983-8098</a><br />
-      Instagram: <a href="https://www.instagram.com/tama_design_arsitek">@tama_design_arsitek</a>
+  <section id="portfolio">
+    <h2 class="section-title">Portofolio</h2>
+    <div class="portfolio">
+      <div class="box">
+        <img src="https://source.unsplash.com/800x600/?modern-house,exterior" alt="Rumah Tinggal Modern"/>
+        <h3>Rumah Tinggal Modern</h3>
+      </div>
+      <div class="box">
+        <img src="https://source.unsplash.com/800x600/?livingroom,interior" alt="Interior Minimalis"/>
+        <h3>Interior Minimalis</h3>
+      </div>
+      <div class="box">
+        <img src="https://source.unsplash.com/800x600/?architecture,office" alt="Bangunan Komersial"/>
+        <h3>Bangunan Komersial</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimoni">
+    <h2 class="section-title">Testimoni</h2>
+    <div class="testimonials">
+      <div class="box testimonial">
+        "Tama Design sangat profesional dan hasil desainnya sesuai impian kami."
+        <strong>- Keluarga Hadi</strong>
+      </div>
+      <div class="box testimonial">
+        "Respon cepat, hasil detail, dan pelayanan yang ramah. Sangat recommended!"
+        <strong>- Bu Rina, Depok</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2 class="section-title">Kontak</h2>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      Konsultasikan proyek Anda dengan kami:<br/><br/>
+      📍 Jl. Rawa Lindung RT 02, RW 04, Jakarta Timur 13870<br/>
+      📱 WhatsApp: <a href="https://wa.me/6285649838098" target="_blank">0856-4983-8098</a><br/>
+      📸 Instagram: <a href="https://www.instagram.com/tama_design_arsitek" target="_blank">@tama_design_arsitek</a>
     </p>
   </section>
 
   <footer>
-    &copy; 2025 PT. Sila Agung Agrapana. All rights reserved.
+    <p>&copy; 2025 Tama Design Arsitek. Seluruh hak cipta dilindungi.</p>
+    <p>Dikembangkan oleh <a href="https://sila.agung.co.id" target="_blank">PT. Sila Agung Agrapana</a></p>
   </footer>
+
 </body>
 </html>
