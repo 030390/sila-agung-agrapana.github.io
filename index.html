@@ -1,205 +1,157 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PT. Sila Agung Agrapana</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #b89e5b;
-      --dark: #1b1b1b;
-      --light: #f8f9fa;
-    }
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
     }
     body {
-      font-family: 'Open Sans', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      scroll-behavior: smooth;
+      background-color: #fdfdfd;
+      color: #222;
     }
-    a {
-      color: var(--primary);
-      text-decoration: none;
+    header {
+      background: url('https://theandalusia.co.id/assets/images/bg_1.jpg') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
     }
-    a:hover {
-      text-decoration: underline;
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
     }
     nav {
       position: fixed;
+      top: 0;
       width: 100%;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      padding: 20px 60px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
     }
-    nav .logo img {
-      height: 50px;
+    nav h2 {
+      font-size: 1.5rem;
+      color: #b49c6a;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-    nav ul li a {
-      color: var(--dark);
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #222;
       font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: var(--primary);
-    }
-    header {
-      height: 100vh;
-      background: url('https://source.unsplash.com/1600x900/?architecture,design,modern') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-    }
-    .hero {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-family: 'Playfair Display', serif;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
     }
     section {
-      padding: 100px 20px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 4rem 2rem;
     }
     .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 60px;
-      position: relative;
+      margin-bottom: 2rem;
     }
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      margin: 20px auto 0;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-    .box {
-      flex: 1 1 300px;
-      background: white;
-      padding: 30px;
+    .project {
+      border: 1px solid #ddd;
+      padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      text-align: center;
+      background-color: #fff;
     }
-    .box h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    .box p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    .box img {
+    .project img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
     }
-    footer {
-      background: var(--dark);
-      color: white;
+    .cta {
       text-align: center;
-      padding: 40px 20px;
+      margin-top: 2rem;
     }
-    footer p {
-      margin: 5px 0;
-    }
-    @media (max-width: 768px) {
-      nav {
-        padding: 20px;
-      }
-      nav ul {
-        display: none;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+    .cta a {
+      padding: 1rem 2rem;
+      background-color: #b49c6a;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo"><img src="LOGO SAA (1).jpg" alt="Logo SAA"></div>
-    <ul>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#layanan">Layanan</a></li>
-      <li><a href="#proyek">Proyek</a></li>
-      <li><a href="#galeri">Galeri</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
+    <h2>SAA</h2>
+    <div>
+      <a href="#about">Tentang Kami</a>
+      <a href="#projects">Proyek</a>
+      <a href="#contact">Kontak</a>
+    </div>
   </nav>
 
   <header>
-    <div class="hero">
-      <h1>PT. Sila Agung Agrapana</h1>
-      <p>Mewujudkan ruang dan bangunan yang bernilai tinggi secara estetika dan fungsi.</p>
-    </div>
+    <h1>PT. Sila Agung Agrapana</h1>
+    <p>Konsultan & Kontraktor Bangunan – Mewujudkan Hunian dan Bangunan Impian Anda Secara Profesional</p>
   </header>
 
-  <section id="galeri">
-    <h2 class="section-title">Galeri Proyek</h2>
-    <div class="grid">
-      <div class="box">
-        <img src="https://source.unsplash.com/400x300/?modern-house" alt="Rumah Modern" />
-        <h3>Rumah Bp. Reynaldo</h3>
+  <section id="about">
+    <div class="section-title">
+      <h2>Tentang Kami</h2>
+    </div>
+    <p style="text-align: center; max-width: 800px; margin: auto;">
+      PT. Sila Agung Agrapana adalah perusahaan jasa kontraktor bangunan yang berlokasi di Jakarta Timur.
+      Kami telah menangani berbagai proyek rumah tinggal, ruko, masjid, hingga kawasan komersial dengan standar kualitas tinggi dan tim profesional.
+    </p>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <h2>Portofolio Proyek</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project">
+        <img src="https://via.placeholder.com/300x200" alt="Proyek Rumah">
+        <h4>Rumah Bp. Reynaldo</h4>
+        <p>Jakarta Timur – Hunian Modern Minimalis</p>
       </div>
-      <div class="box">
-        <img src="https://source.unsplash.com/400x300/?interior-design" alt="Interior" />
-        <h3>Rumah Ibu Irawaty Melisa</h3>
+      <div class="project">
+        <img src="https://via.placeholder.com/300x200" alt="Masjid">
+        <h4>Masjid Nurul Mustofa</h4>
+        <p>Desain megah dan representatif</p>
       </div>
-      <div class="box">
-        <img src="https://source.unsplash.com/400x300/?architecture,mosque" alt="Masjid" />
-        <h3>Masjid Nurul Mustofa</h3>
+      <div class="project">
+        <img src="https://via.placeholder.com/300x200" alt="Ruko">
+        <h4>Ruko Dasana Xenter Bonang</h4>
+        <p>Ruko komersial di kawasan strategis</p>
       </div>
-      <div class="box">
-        <img src="https://source.unsplash.com/400x300/?commercial-building" alt="Ruko" />
-        <h3>Ruko Mutiara Karawaci</h3>
-      </div>
-      <div class="box">
-        <img src="https://source.unsplash.com/400x300/?residential-complex" alt="Perumahan" />
-        <h3>Perumahan Pluit Samudra</h3>
-      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Hubungi Kami</h2>
+    </div>
+    <p style="text-align: center;">
+      📍 Jl. Rawa Lindung No. 108 Cilangkap, Cipayung Jakarta Timur<br>
+      📞 +62 856 498 380 98
+    </p>
+    <div class="cta">
+      <a href="https://wa.me/6285649838098" target="_blank">Konsultasi via WhatsApp</a>
     </div>
   </section>
 </body>
