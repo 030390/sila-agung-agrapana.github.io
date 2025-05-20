@@ -2,19 +2,19 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PT. Sila Agung Agrapana</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #d4af37;
-      --dark: #111;
-      --light: #f8f8f8;
+      --primary: #b89e5b;
+      --dark: #1b1b1b;
+      --light: #f8f9fa;
     }
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
       font-family: 'Open Sans', sans-serif;
@@ -29,248 +29,178 @@
     a:hover {
       text-decoration: underline;
     }
+    nav {
+      position: fixed;
+      width: 100%;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav .logo img {
+      height: 50px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: var(--dark);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: var(--primary);
+    }
     header {
-      position: relative;
       height: 100vh;
-      background: url('https://source.unsplash.com/1600x900/?factory,industry,chemical') center/cover no-repeat;
+      background: url('https://source.unsplash.com/1600x900/?architecture,design,modern') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: white;
+      position: relative;
     }
     header::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
     }
-    .hero-content {
+    .hero {
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      text-align: center;
+      color: white;
       padding: 0 20px;
     }
-    .hero-content h1 {
+    .hero h1 {
+      font-size: 3rem;
       font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      margin-bottom: 15px;
     }
-    .hero-content p {
-      font-size: 1.3rem;
-    }
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      z-index: 1000;
-    }
-    nav .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--dark);
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-    nav ul li a {
-      color: var(--dark);
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: var(--primary);
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
     section {
-      padding: 80px 20px;
+      padding: 100px 20px;
       max-width: 1100px;
       margin: auto;
     }
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       position: relative;
     }
     .section-title::after {
       content: "";
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
       display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
       margin: 20px auto 0;
     }
-    .features, .portfolio, .testimonials {
+    .grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
       justify-content: center;
+      gap: 30px;
     }
     .box {
       flex: 1 1 300px;
       background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
       padding: 30px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-    .box img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
-    .portfolio .box img {
-      width: 100%;
-      height: auto;
       border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      text-align: center;
     }
     .box h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
-    }
-    .box p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .testimonial {
-      font-style: italic;
-      font-size: 1rem;
-    }
-    .testimonial strong {
-      display: block;
-      margin-top: 15px;
-      font-style: normal;
       color: var(--primary);
     }
+    .box p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .box img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
     footer {
-      background: #111;
+      background: var(--dark);
       color: white;
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
     footer p {
-      margin-bottom: 10px;
-      font-size: 0.9rem;
+      margin: 5px 0;
     }
     @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.3rem;
+      nav {
+        padding: 20px;
       }
       nav ul {
         display: none;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-
   <nav>
-    <div class="logo">PT. Sila Agung</div>
+    <div class="logo"><img src="LOGO SAA (1).jpg" alt="Logo SAA"></div>
     <ul>
       <li><a href="#tentang">Tentang</a></li>
       <li><a href="#layanan">Layanan</a></li>
-      <li><a href="#portfolio">Produk</a></li>
-      <li><a href="#testimoni">Testimoni</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#galeri">Galeri</a></li>
       <li><a href="#kontak">Kontak</a></li>
     </ul>
   </nav>
 
   <header>
-    <div class="hero-content">
+    <div class="hero">
       <h1>PT. Sila Agung Agrapana</h1>
-      <p>Solusi Inovatif untuk Industri Kimia & Konstruksi</p>
+      <p>Mewujudkan ruang dan bangunan yang bernilai tinggi secara estetika dan fungsi.</p>
     </div>
   </header>
 
-  <section id="tentang">
-    <h2 class="section-title">Tentang Kami</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-      Kami adalah perusahaan manufaktur kimia industri yang berfokus pada produksi adhesive (lem), sealant, dan produk kimia lainnya untuk sektor konstruksi dan manufaktur. Dengan pengalaman lebih dari 10 tahun, kami berkomitmen menghadirkan produk berkualitas tinggi yang sesuai dengan kebutuhan industri modern.
-    </p>
-  </section>
-
-  <section id="layanan">
-    <h2 class="section-title">Layanan Kami</h2>
-    <div class="features">
+  <section id="galeri">
+    <h2 class="section-title">Galeri Proyek</h2>
+    <div class="grid">
       <div class="box">
-        <img src="https://img.icons8.com/ios-filled/100/factory.png" alt="Manufaktur Kimia"/>
-        <h3>Manufaktur Kimia</h3>
-        <p>Produksi adhesive, sealant, dan bahan kimia lainnya sesuai standar industri.</p>
+        <img src="https://source.unsplash.com/400x300/?modern-house" alt="Rumah Modern" />
+        <h3>Rumah Bp. Reynaldo</h3>
       </div>
       <div class="box">
-        <img src="https://img.icons8.com/ios-filled/100/test-tube.png" alt="Research & Development"/>
-        <h3>Research & Development</h3>
-        <p>Pengembangan formula khusus sesuai kebutuhan mitra dan sektor spesifik.</p>
+        <img src="https://source.unsplash.com/400x300/?interior-design" alt="Interior" />
+        <h3>Rumah Ibu Irawaty Melisa</h3>
       </div>
       <div class="box">
-        <img src="https://img.icons8.com/ios-filled/100/shipped.png" alt="Distribusi Nasional"/>
-        <h3>Distribusi Nasional</h3>
-        <p>Menjangkau seluruh wilayah Indonesia melalui jaringan logistik yang terintegrasi.</p>
+        <img src="https://source.unsplash.com/400x300/?architecture,mosque" alt="Masjid" />
+        <h3>Masjid Nurul Mustofa</h3>
+      </div>
+      <div class="box">
+        <img src="https://source.unsplash.com/400x300/?commercial-building" alt="Ruko" />
+        <h3>Ruko Mutiara Karawaci</h3>
+      </div>
+      <div class="box">
+        <img src="https://source.unsplash.com/400x300/?residential-complex" alt="Perumahan" />
+        <h3>Perumahan Pluit Samudra</h3>
       </div>
     </div>
   </section>
-
-  <section id="portfolio">
-    <h2 class="section-title">Produk Unggulan</h2>
-    <div class="portfolio">
-      <div class="box">
-        <img src="https://source.unsplash.com/800x600/?glue,chemical" alt="X-Bond Adhesive"/>
-        <h3>X-Bond Adhesive</h3>
-      </div>
-      <div class="box">
-        <img src="https://source.unsplash.com/800x600/?construction,sealant" alt="Sealant Industrial"/>
-        <h3>Industrial Sealant</h3>
-      </div>
-      <div class="box">
-        <img src="https://source.unsplash.com/800x600/?lab,formula" alt="Custom Chemical Solutions"/>
-        <h3>Custom Formulation</h3>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimoni">
-    <h2 class="section-title">Testimoni</h2>
-    <div class="testimonials">
-      <div class="box testimonial">
-        "Produk PT. Sila Agung selalu konsisten dan tepat waktu dalam pengiriman."
-        <strong>- PT. Indoteknik Konstruksi</strong>
-      </div>
-      <div class="box testimonial">
-        "Kami terbantu dengan layanan R&D mereka untuk kebutuhan formula khusus kami."
-        <strong>- CV. Bangun Jaya</strong>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontak">
-    <h2 class="section-title">Kontak Kami</h2>
-    <p style="text-align:center; max-width:700px; margin:auto;">
-      Konsultasikan kebutuhan industri Anda dengan kami:<br/><br/>
-      📍 Jl. Raya Cakung No. 88, Jakarta Timur<br/>
-      📱 WhatsApp: <a href="https://wa.me/6285649838098" target="_blank">0856-4983-8098</a><br/>
-      📸 Instagram: <a href="https://www.instagram.com/sila.agung" target="_blank">@sila.agung</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 PT. Sila Agung Agrapana. Seluruh hak cipta dilindungi.</p>
-    <p>Dikembangkan oleh <a href="https://sila.agung.co.id" target="_blank">Divisi Digital Internal</a></p>
-  </footer>
-
 </body>
 </html>
