@@ -1,158 +1,114 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PT. Sila Agung Agrapana</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-    body {
-      background-color: #fdfdfd;
-      color: #222;
-    }
-    header {
-      background: url('https://theandalusia.co.id/assets/images/bg_1.jpg') center/cover no-repeat;
-      height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-    nav h2 {
-      font-size: 1.5rem;
-      color: #b49c6a;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #222;
-      font-weight: 600;
-    }
-    section {
-      padding: 4rem 2rem;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .project {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      border-radius: 10px;
-      background-color: #fff;
-    }
-    .project img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-    .cta {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .cta a {
-      padding: 1rem 2rem;
-      background-color: #b49c6a;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <h2>SAA</h2>
-    <div>
-      <a href="#about">Tentang Kami</a>
-      <a href="#projects">Proyek</a>
-      <a href="#contact">Kontak</a>
-    </div>
-  </nav>
+# Re-run with manual insertion of App.jsx content since canmore module isn't accessible in Python tool
 
-  <header>
-    <h1>PT. Sila Agung Agrapana</h1>
-    <p>Konsultan & Kontraktor Bangunan – Mewujudkan Hunian dan Bangunan Impian Anda Secara Profesional</p>
-  </header>
+app_jsx_code = """// Versi Vite + React - Tanpa Next.js & tanpa UI Library
+import { useEffect, useState } from "react";
 
-  <section id="about">
-    <div class="section-title">
-      <h2>Tentang Kami</h2>
-    </div>
-    <p style="text-align: center; max-width: 800px; margin: auto;">
-      PT. Sila Agung Agrapana adalah perusahaan jasa kontraktor bangunan yang berlokasi di Jakarta Timur.
-      Kami telah menangani berbagai proyek rumah tinggal, ruko, masjid, hingga kawasan komersial dengan standar kualitas tinggi dan tim profesional.
-    </p>
-  </section>
+export default function App() {
+  const [projects, setProjects] = useState([]);
+  const [pricelist, setPricelist] = useState([]);
 
-  <section id="projects">
-    <div class="section-title">
-      <h2>Portofolio Proyek</h2>
-    </div>
-    <div class="projects-grid">
-      <div class="project">
-        <img src="https://via.placeholder.com/300x200" alt="Proyek Rumah">
-        <h4>Rumah Bp. Reynaldo</h4>
-        <p>Jakarta Timur – Hunian Modern Minimalis</p>
-      </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/300x200" alt="Masjid">
-        <h4>Masjid Nurul Mustofa</h4>
-        <p>Desain megah dan representatif</p>
-      </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/300x200" alt="Ruko">
-        <h4>Ruko Dasana Xenter Bonang</h4>
-        <p>Ruko komersial di kawasan strategis</p>
-      </div>
-    </div>
-  </section>
+  useEffect(() => {
+    setProjects([
+      { name: "Rumah Bp. Reynaldo", image: "/project1.jpg" },
+      { name: "Rumah Ibu Irawaty Melisa", image: "/project2.jpg" },
+      { name: "Rumah Dr. Yudi Fadillah", image: "/project3.jpg" },
+      { name: "Rumah Bp. H. Toni", image: "/project4.jpg" },
+      { name: "Masjid Nurul Mustofa", image: "/project5.jpg" },
+      { name: "Rumah Bp. Ari Lumaksono", image: "/project6.jpg" },
+      { name: "Rumah Ibu Azza", image: "/project7.jpg" },
+      { name: "Rumah Bp. H. Azzam", image: "/project8.jpg" },
+      { name: "Ruko Mutiara Karawaci", image: "/project9.jpg" },
+      { name: "Ruko Dasana Xenter Bonang", image: "/project10.jpg" },
+      { name: "Water Boom Dasana Xenter Bonang", image: "/project11.jpg" },
+      { name: "Perumahan Mutiara Gading", image: "/project12.jpg" },
+      { name: "Marketing Gallery Mutiara Gading", image: "/project13.jpg" },
+      { name: "Ruko La Vresco Mutiara Gading", image: "/project14.jpg" },
+      { name: "Ruko Plaza Pasadena Villa Tomang", image: "/project15.jpg" },
+      { name: "Perumahan Dukuh Bima", image: "/project16.jpg" },
+      { name: "Perumahan Pluit Samudra", image: "/project17.jpg" },
+      { name: "Ruko Dramaga", image: "/project18.jpg" },
+    ]);
 
-  <section id="contact">
-    <div class="section-title">
-      <h2>Hubungi Kami</h2>
+    setPricelist([
+      { title: "Desain Rumah Minimalis", price: "Rp 150.000 / m²" },
+      { title: "Desain Rumah Modern", price: "Rp 175.000 / m²" },
+      { title: "Desain Ruko", price: "Rp 200.000 / m²" },
+      { title: "Desain Komersial (Cafe, Office, dll)", price: "Rp 250.000 / m²" },
+      { title: "Jasa Gambar Kerja Lengkap", price: "Mulai dari Rp 5.000.000" },
+    ]);
+  }, []);
+
+  return (
+    <div style={{ fontFamily: 'sans-serif' }}>
+      <header style={{ background: '#f1f1f1', padding: '1.5rem', display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <img src="/logo-saa.jpg" alt="Logo SAA" width="50" height="50" style={{ borderRadius: '12px' }} />
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>PT. Sila Agung Agrapana</h1>
+        </div>
+        <a href="https://www.instagram.com/tama_design_arsitek?utm_source=qr&igsh=aDluODI4Z3VsZDlt" target="_blank" rel="noopener noreferrer">
+          IG Tama Design
+        </a>
+      </header>
+
+      <section style={{ padding: '2rem', textAlign: 'center', background: 'linear-gradient(to bottom right, #fff, #f3f4f6)' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: 'bold' }}>Mewujudkan Hunian Impian Anda</h2>
+        <p>Kami menghadirkan layanan desain dan pembangunan terbaik untuk rumah, ruko, masjid, dan bangunan komersial.</p>
+      </section>
+
+      <section style={{ padding: '2rem' }}>
+        <h2 style={{ fontSize: '1.8rem', textAlign: 'center', fontWeight: 'bold', marginBottom: '1.5rem' }}>Project Portfolio</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+          {projects.map((project, idx) => (
+            <div key={idx} style={{ background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', borderRadius: '1rem', overflow: 'hidden' }}>
+              <img src={project.image} alt={project.name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+              <div style={{ padding: '1rem', fontWeight: '600' }}>{project.name}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ padding: '2rem', backgroundColor: '#f9fafb' }}>
+        <h2 style={{ fontSize: '1.8rem', textAlign: 'center', fontWeight: 'bold', marginBottom: '1rem' }}>Pricelist Jasa</h2>
+        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+          {pricelist.map((item, idx) => (
+            <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#fff', borderRadius: '0.75rem', marginBottom: '0.5rem', boxShadow: '0 1px 4px rgba(0,0,0,0.05)' }}>
+              <span>{item.title}</span>
+              <span>{item.price}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ padding: '2rem' }}>
+        <h2 style={{ fontSize: '1.8rem', textAlign: 'center', fontWeight: 'bold', marginBottom: '1rem' }}>Hubungi Kami</h2>
+        <form style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <input type="text" placeholder="Nama" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid #ccc' }} />
+          <input type="text" placeholder="Email atau No. HP" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid #ccc' }} />
+          <textarea placeholder="Pesan Anda..." rows={4} style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid #ccc' }} />
+          <button type="submit" style={{ padding: '0.75rem', backgroundColor: '#111827', color: '#fff', borderRadius: '0.5rem' }}>Kirim</button>
+        </form>
+      </section>
+
+      <footer style={{ background: '#111827', color: '#fff', padding: '1.5rem', textAlign: 'center' }}>
+        <p>Alamat: Jl. Rawa Lindung No. 108 Cilangkap, Cipayung Jakarta Timur</p>
+        <p>Telepon: +62 856 498 380 98</p>
+        <p>&copy; {new Date().getFullYear()} PT. Sila Agung Agrapana</p>
+      </footer>
     </div>
-    <p style="text-align: center;">
-      📍 Jl. Rawa Lindung No. 108 Cilangkap, Cipayung Jakarta Timur<br>
-      📞 +62 856 498 380 98
-    </p>
-    <div class="cta">
-      <a href="https://wa.me/6285649838098" target="_blank">Konsultasi via WhatsApp</a>
-    </div>
-  </section>
-</body>
-</html>
+  );
+}
+"""
+
+with open("/mnt/data/sila-agung-website/src/App.jsx", "w") as f:
+    f.write(app_jsx_code)
+
+# Zip everything
+zip_path = "/mnt/data/sila-agung-website.zip"
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
+    for root, _, files in os.walk("/mnt/data/sila-agung-website"):
+        for file in files:
+            file_path = os.path.join(root, file)
+            arcname = os.path.relpath(file_path, "/mnt/data/sila-agung-website")
+            zipf.write(file_path, arcname)
+
+zip_path
